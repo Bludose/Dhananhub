@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redeem Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #message {
+            display: none;
+            font-size: 1.2em;
+            color: red;
+        }
+        #redeem-section {
+            display: none;
+            text-align: center;
+        }
+        #redeem-section input {
+            padding: 10px;
+            margin: 10px;
+            font-size: 1em;
+        }
+        #redeem-section button {
+            padding: 10px 20px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+
+<div id="message">Please complete the Linkversite tasks first.</div>
+
+<div id="redeem-section">
+    <h1>Redeem Your Code</h1>
+    <input type="text" id="code" placeholder="Enter your code">
+    <button onclick="redeemCode()">Redeem</button>
+    <p id="success-message" style="color: green;"></p>
+</div>
+
+<script>
+    // Simulate the task completion check
+    const tasksCompleted = false; // Change to true to simulate completed tasks
+
+    document.addEventListener("DOMContentLoaded", function() {
+        if (tasksCompleted) {
+            document.getElementById("redeem-section").style.display = "block";
+        } else {
+            document.getElementById("message").style.display = "block";
+        }
+    });
+
+    function redeemCode() {
+        const code = document.getElementById("code").value;
+        if (code) {
+            document.getElementById("success-message").textContent = "Code redeemed successfully!";
+        } else {
+            document.getElementById("success-message").textContent = "Please enter a valid code.";
+        }
+    }
+</script>
+
+</body>
+</html>
